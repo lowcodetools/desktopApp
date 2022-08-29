@@ -1,6 +1,12 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import { MemoryRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import icon from '../../assets/icon.svg';
 import './App.css';
+
+const Iframe = () => {
+  return (
+    <iframe width={700} height={700} title="Weel" src="http://localhost:3000" />
+  );
+};
 
 const Hello = () => {
   return (
@@ -33,6 +39,9 @@ const Hello = () => {
             </span>
             Donate
           </button>
+          <Link to="/iframe">
+            <button type="button">Iframe</button>
+          </Link>
         </a>
       </div>
     </div>
@@ -44,6 +53,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Hello />} />
+        <Route path="/iframe" element={<Iframe />} />
       </Routes>
     </Router>
   );
