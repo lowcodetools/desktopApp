@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const Hello = () => {
@@ -12,6 +13,7 @@ const Hello = () => {
 };
 
 const WellWell = () => {
+  const [component, setComponents] = useState();
   return (
     <div>
       <div>Well Well 2</div>
